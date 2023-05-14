@@ -1,0 +1,97 @@
+.course{
+    min-height: 90vh;
+    padding: 2rem 0;
+}
+
+.courseWrapper{
+    max-width: 1200px;
+    margin-inline: auto;
+    min-height: 100vh;
+}
+
+.courseHeaderWrapper{
+    max-width: 30rem;
+    width: 90%;
+    margin-inline: auto;
+}
+
+.courseHeaderWrapper h2{
+    font-size: 2rem;
+    color: rgb(1, 2, 82);
+    font-weight: 700;
+    
+}
+
+.searchWrapper{
+    max-width: 670px;
+    width: 90%;
+    margin-inline: auto;
+    margin-top: 1rem;
+    background-color: #EAEAEA;
+    padding: 4rem;
+    border-radius: 4px;
+}
+
+.search{
+    display: flex;
+    position: relative;
+
+}
+
+.search input{
+    width: 100%;
+    outline: none;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    border-radius: 2rem;
+    transition: all .2s;
+}
+.search input:focus{
+    box-shadow: 2px 1px 10px 2px #d3d5d7;
+
+}
+.search img{
+    width: 4rem;
+    position: absolute;
+    right: 0;
+    padding: .5rem;
+    margin-right: .5rem;
+    cursor: pointer;
+}
+
+.dropdownWrapper{
+    display: flex;
+    margin-top: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.firstDropdown{
+    padding: .8rem;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    font-size: 1.2rem;
+    max-width: 300px;
+    width: 100%;
+}
+
+.firstDropdown option{
+    font-size: 1rem;
+}
+.dropdownWrapper > *:not(:first-child){
+    margin-left: 1rem;
+}
+
+
+@media all and (max-width:576px) {
+    .dropdownWrapper{
+        flex-direction: column;
+        justify-content: flex-start;
+        gap:1rem;
+    }
+    .dropdownWrapper > *:not(:first-child){
+        margin-left: 0;
+    }
+}
