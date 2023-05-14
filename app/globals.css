@@ -2,11 +2,19 @@
 
 :root {
   --body-font: 'Roboto', sans-serif;
-
   --bg-color: #F8F4EA;
 }
 
 body {
   background-color: var(--bg-color);
   font-family: var(--body-font);
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  overflow-x: hidden ;
+}
+
+html{
+  margin:0;
+  padding:0;
 }
