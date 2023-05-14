@@ -5,6 +5,7 @@ export default function Navbar() {
     <div>
       <h1>Navbar</h1>
       <Link href="/course"> course </Link>
+      <Link href="/post"> post </Link>
     </div>
   );
 }
