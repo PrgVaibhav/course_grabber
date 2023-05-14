@@ -1,7 +1,5 @@
+import Card from "@/components/Card";
+
 export default function course() {
-  return (
-    <div>
-      <h1>Course Grabber</h1>
-    </div>
-  );
+  return <Card />;
 }
