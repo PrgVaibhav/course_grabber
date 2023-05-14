@@ -5,6 +5,7 @@
     align-items: center;
     min-height: 100vh;
     gap: 1rem;
+    padding: 8px 10px;
 }
 
 .header_title span {
@@ -55,7 +56,6 @@
     color: rgb(121, 121, 121);
 }
 
-.header_description p:last-child {}
 
 .header_description a {
     text-decoration: none;
@@ -63,7 +63,7 @@
     max-width: 100%;
     font-weight: 400;
     transition: all 0.3s ease-in-out;
-    background-color: chocolate;
+    background-color: #FF9800;
     padding: 10px;
     border-radius: 5px;
     font-family: inherit;
@@ -74,7 +74,7 @@
 }
 
 .header_description a:hover {
-    transform: translate(5px, -5px);
+    transform: translate(0px, -5px);
     box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.8);
 }
 

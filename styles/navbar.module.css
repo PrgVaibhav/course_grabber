@@ -1,25 +1,28 @@
-.navbar{
+.navbar {
     background-color: #FF9800;
+    background-color: #579BB1;
     color: white;
     display: flex;
     align-items: center;
-    height: 9vh;
     justify-content: space-between;
-    box-shadow: 0px 5px 11px 0px grey;
+    box-shadow: 0px 5px 5px 0px grey;
+    padding: 8px 10px;
+
 }
 
-.logo{
+.logo {
     margin: 0 1rem;
     font-size: 1.5rem;
-    cursor: pointer;
-    font-weight: bold;
+    font-family: var(--heading-font);
 }
-.links{
+
+.links {
     margin: 0 1rem;
     display: flex;
     gap: 1rem;
 }
-.link{
+
+.link {
     text-decoration: none;
     padding: 0.5rem;
     background-color: #FF5722;
@@ -28,12 +31,14 @@
     transition: 0.3s;
     font-weight: bold;
 }
-.activeLink{
+
+.activeLink {
     background-color: #ffe3db;
     color: #e63e09;
-    
+
 }
-.link:hover{
+
+.link:hover {
     background-color: #ffe3db;
     color: #e63e09;
 }
