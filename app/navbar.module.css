@@ -1,0 +1,39 @@
+.navbar{
+    background-color: #FF9800;
+    color: white;
+    display: flex;
+    align-items: center;
+    height: 9vh;
+    justify-content: space-between;
+    box-shadow: 0px 5px 11px 0px grey;
+}
+
+.logo{
+    margin: 0 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    font-weight: bold;
+}
+.links{
+    margin: 0 1rem;
+    display: flex;
+    gap: 1rem;
+}
+.link{
+    text-decoration: none;
+    padding: 0.5rem;
+    background-color: #FF5722;
+    color: white;
+    border-radius: 0.5rem;
+    transition: 0.3s;
+    font-weight: bold;
+}
+.activeLink{
+    background-color: #ffe3db;
+    color: #e63e09;
+    
+}
+.link:hover{
+    background-color: #ffe3db;
+    color: #e63e09;
+}
