@@ -1,37 +1,56 @@
 "use client";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styles from './page.module.css'
 import axios from 'axios';
+import Card from '@/components/Card';
 
 export default function course() {
+
   const [search,setSearch] = useState({
     query:'',
     sort:'',
     upload_date:'',
     duration:'',
   });
-  const [videos, setVideos] = useState();
+
+  const [videos, setVideos] = useState([]);
+  const [fetchOn,setFetch] = useState(false);
 
   const options = {
     method: 'GET',
     url: 'https://youtube-search-and-download.p.rapidapi.com/search',
     params: {
       hl: 'en',
+      query:'mern tutorial',
+      type:'v'
     },
     headers: {
       'X-RapidAPI-Key': '2c07b9bc7bmsh2c33b02227ec391p1c708bjsn144f2176911a',
       'X-RapidAPI-Host': 'youtube-search-and-download.p.rapidapi.com'
     }
   };
+
+  const [option,setOptions] = useState(options);
+
   const submitHandler = async()=>{
-    options.params = {...options.params, ...search}
-    try {
-      const response = await axios.request(options);
-      setVideos(response);
-    } catch (error) {
-      console.error(error);
+    // options.params = {...options.params,...search}
+    const newObj = {...options.params,...search}
+    setOptions({...option,params:newObj})
+    console.log(options);
+    setFetch((p)=>!p);
+  }
+  useEffect(()=>{
+    const doFetch = async()=>{
+      try {
+        console.log(option);
+        const response = await axios.request(option);
+        setVideos(response.data.contents);
+      } catch (error) {
+        console.error(error);
+      }
     }
-  } 
+    doFetch();
+  },[fetchOn])
 
   return (
     <section className={styles.course}>
@@ -69,6 +88,7 @@ export default function course() {
             </div>
           </form>
         </div>
+        <Card videos={videos} />
       </div>
     </section>
   );
