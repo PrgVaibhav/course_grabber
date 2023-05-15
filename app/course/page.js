@@ -36,13 +36,11 @@ export default function course() {
     // options.params = {...options.params,...search}
     const newObj = {...options.params,...search}
     setOptions({...option,params:newObj})
-    console.log(options);
     setFetch((p)=>!p);
   }
   useEffect(()=>{
     const doFetch = async()=>{
       try {
-        console.log(option);
         const response = await axios.request(option);
         setVideos(response.data.contents);
       } catch (error) {

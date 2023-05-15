@@ -8,11 +8,22 @@
     padding: 8px 10px;
 }
 
+.header_wrapper{
+    display:flex;
+    gap:2rem;
+    align-items: center;
+}
+
 .header_title span {
     font-size: 2rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.2rem;
+}
+
+.headerImage{
+    max-width: 40rem;
+    width: 100%;
 }
 
 @keyframes color_change {
@@ -44,6 +55,7 @@
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    margin-top: 1rem;
 }
 
 
@@ -85,5 +97,11 @@
 
     .header_description p {
         font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 840px) {
+    .header_wrapper{
+        flex-direction: column-reverse;
     }
 }
