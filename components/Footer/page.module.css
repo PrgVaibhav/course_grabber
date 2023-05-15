@@ -45,7 +45,13 @@
 
 .socialHandles {
     display: flex;
+    flex-direction: column;
     gap: 1.5rem;
+}
+
+.socialHandles a{
+    text-decoration: none;
+    color: black;
 }
 
 @media all and (max-width:850px) {

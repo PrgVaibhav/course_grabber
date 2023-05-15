@@ -14,6 +14,7 @@
     margin: 0 1rem;
     font-size: 1.5rem;
     font-family: var(--heading-font);
+    color: white;
 }
 
 .links {
@@ -25,7 +26,7 @@
 .link {
     text-decoration: none;
     padding: 0.5rem;
-    background-color: #FF5722;
+    background-color: #FF9800;
     color: white;
     border-radius: 0.5rem;
     transition: 0.3s;
@@ -42,3 +43,66 @@
     background-color: #ffe3db;
     color: #e63e09;
 }
+
+.menuIcon{
+    display:none;
+  }
+  
+  .opacity{
+    position: fixed;
+    height: 100vh;
+    width: 0vw;
+    background-color: #737373;
+    opacity: 0.4;
+    z-index: 1;
+    transition: 0.5s ease-in-out;
+  }
+  .sidebar{
+    /* position: fixed;
+    z-index: 1;
+    background-color: white;
+    height: 100vh;
+    width: 50vw;
+    overflow: hidden;
+    transition: 0.5s;
+    /* box-shadow: 0 0 8px 0px rgba(171, 166, 166, 0.703); */
+    position: fixed;
+    right: 0;
+    z-index: 2;
+    background-color: white;
+    height: 100vh;
+    width: 0vw;
+    box-shadow: 0 0 8px 0px rgba(171, 166, 166, 0.703);
+    transition: 0.5s;
+  }
+  .closeIcon{
+    
+    margin: 0.3rem;
+    
+  }
+  .sidebar ul{
+    list-style: none;
+  }
+  .sidebar ul li{
+    margin: 1rem 0.6rem;
+    
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  .sidebar ul li a{
+    text-decoration: none;
+    color:#FF9800;
+    
+  }
+  
+  @media(max-width:779px){
+    .menuIcon{
+      display: block;
+    }
+    .sidebar{
+      display: block;
+    }
+    .links{
+        display: none;
+    }
+  }

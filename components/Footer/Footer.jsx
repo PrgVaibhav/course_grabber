@@ -15,9 +15,10 @@ export default function Footer() {
           <a className={styles.details}>Privacy Policy</a>
         </div>
         <div className={styles.socialHandles}>
-          <img src='/icon-facebook.svg'></img>
-          <img src='/icon-instagram.svg'></img>
-          <img src='/icon-twitter.svg'></img>
+          <div><h2>Contributers</h2></div>
+          <a href="https://github.com/Varghab">Varghav <i class="fa-brands fa-github"></i></a>
+          <a href="https://github.com/PrgVaibhav">Vaibhav <i class="fa-brands fa-github"></i></a>
+          <a href="https://github.com/scragonrex">Abhishek <i class="fa-brands fa-github"></i></a>
         </div>
       </div>
     </div>
