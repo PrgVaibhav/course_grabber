@@ -4,13 +4,7 @@ import styles from "./page.module.css";
 import axios from "axios";
 import Card from "@/components/Card";
 import { BiSearch } from "react-icons/bi";
-
-export const metadata = {
-  title: "Course / Course Grabber",
-  description:
-    "Course Grabber is a web app that allows you to search for free courses from youtube and other platforms.",
-  favicon: "/favicon.ico",
-};
+import Head from "next/head";
 
 export default function course() {
   const [search, setSearch] = useState({
@@ -58,86 +52,103 @@ export default function course() {
   }, [fetchOn]);
 
   return (
-    <section className={styles.course}>
-      <div className={styles.courseWrapper}>
-        <div className={styles.courseHeaderWrapper}>
-          <h2>Search your courses here...</h2>
+    <>
+      <Head>
+        <title> Course /Course Grabber </title>
+        <meta
+          name="description"
+          content="Course Grabber is a web app that allows you to search for free courses from youtube and other platforms."
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </Head>
+
+      <section className={styles.course}>
+        <div className={styles.courseWrapper}>
+          <div className={styles.courseHeaderWrapper}>
+            <h2>Search your courses here...</h2>
+          </div>
+          <div className={styles.searchWrapper}>
+            <form>
+              <div className={styles.search}>
+                <input
+                  onChange={(e) =>
+                    setSearch({ ...search, query: e.target.value })
+                  }
+                  type="text"
+                  placeholder="Search"
+                ></input>
+                <BiSearch onClick={submitHandler} className={styles.icon} />
+              </div>
+              <div
+                style={{
+                  marginTop: "1rem",
+                  textAlign: "center",
+                  letterSpacing: 1,
+                }}
+              >
+                <h2 style={{ fontWeight: 300 }}>Sort by</h2>
+              </div>
+              <div className={styles.dropdownWrapper}>
+                <select
+                  onChange={(e) =>
+                    setSearch({
+                      ...search,
+                      sort:
+                        e.target.value.toLowerCase() === "relevance"
+                          ? "r"
+                          : "v",
+                    })
+                  }
+                  className={styles.firstDropdown}
+                >
+                  <option selected value="">
+                    None
+                  </option>
+                  <option value="Relevance">Relevance</option>
+                  <option value="View Count">View Count</option>
+                </select>
+                <select
+                  onChange={(e) =>
+                    setSearch({
+                      ...search,
+                      upload_date:
+                        e.target.value.toLowerCase() === "month ago"
+                          ? "m"
+                          : "y",
+                    })
+                  }
+                  className={styles.firstDropdown}
+                >
+                  <option selected value="">
+                    None
+                  </option>
+                  <option value="Month ago">Month ago</option>
+                  <option value="Year ago">Year ago</option>
+                </select>
+                <select
+                  onChange={(e) =>
+                    setSearch({
+                      ...search,
+                      duration:
+                        e.target.value.toLowerCase() === "long video"
+                          ? "l"
+                          : "s",
+                    })
+                  }
+                  className={styles.firstDropdown}
+                >
+                  <option selected value="">
+                    None
+                  </option>
+                  <option value="Long video">Long video</option>
+                  <option value="Short video">Short video</option>
+                </select>
+              </div>
+            </form>
+          </div>
+          <Card videos={videos} />
         </div>
-        <div className={styles.searchWrapper}>
-          <form>
-            <div className={styles.search}>
-              <input
-                onChange={(e) =>
-                  setSearch({ ...search, query: e.target.value })
-                }
-                type="text"
-                placeholder="Search"
-              ></input>
-              <BiSearch onClick={submitHandler} className={styles.icon} />
-            </div>
-            <div
-              style={{
-                marginTop: "1rem",
-                textAlign: "center",
-                letterSpacing: 1,
-              }}
-            >
-              <h2 style={{ fontWeight: 300 }}>Sort by</h2>
-            </div>
-            <div className={styles.dropdownWrapper}>
-              <select
-                onChange={(e) =>
-                  setSearch({
-                    ...search,
-                    sort:
-                      e.target.value.toLowerCase() === "relevance" ? "r" : "v",
-                  })
-                }
-                className={styles.firstDropdown}
-              >
-                <option selected value="">
-                  None
-                </option>
-                <option value="Relevance">Relevance</option>
-                <option value="View Count">View Count</option>
-              </select>
-              <select
-                onChange={(e) =>
-                  setSearch({
-                    ...search,
-                    upload_date:
-                      e.target.value.toLowerCase() === "month ago" ? "m" : "y",
-                  })
-                }
-                className={styles.firstDropdown}
-              >
-                <option selected value="">
-                  None
-                </option>
-                <option value="Month ago">Month ago</option>
-                <option value="Year ago">Year ago</option>
-              </select>
-              <select
-                onChange={(e) =>
-                  setSearch({
-                    ...search,
-                    duration:
-                      e.target.value.toLowerCase() === "long video" ? "l" : "s",
-                  })
-                }
-                className={styles.firstDropdown}
-              >
-                <option selected value="">
-                  None
-                </option>
-                <option value="Long video">Long video</option>
-                <option value="Short video">Short video</option>
-              </select>
-            </div>
-          </form>
-        </div>
-        <Card videos={videos} />
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
