@@ -51,6 +51,10 @@ export default function course() {
     doFetch();
   }, [fetchOn]);
 
+  const formHandler = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <>
       <Head>
@@ -68,7 +72,7 @@ export default function course() {
             <h2>Search your courses here...</h2>
           </div>
           <div className={styles.searchWrapper}>
-            <form>
+            <form onSubmit={formHandler}>
               <div className={styles.search}>
                 <input
                   onChange={(e) =>
