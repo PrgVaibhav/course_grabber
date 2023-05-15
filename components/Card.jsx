@@ -1,53 +1,34 @@
 "use client";
-
 import styles from "@/styles/card.module.css";
-import { useEffect, useState } from "react";
 import { BiTime, BiCategoryAlt } from "react-icons/bi";
-export default function Card() {
-  const [data, setData] = useState([]);
 
-  const getData = async () => {
-    try {
-      const res = await fetch("https://dummyjson.com/products");
-      const data = await res.json();
-      setData(data.products);
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  useEffect(() => {
-    getData();
-
-    return () => {
-      setData([]);
-    };
-  }, []);
-
+export default function Card({videos}) {
   return (
     <section className={styles.course_container}>
       <div className={styles.course_cards}>
-        {data.map((item) => {
+        {videos.map((video) => {
+          console.log(video);
           return (
-            <div className={styles.course_card} key={item.id}>
+            <a className={styles.atag} href={`https://www.youtube.com/watch?v=${video.video.videoId}`} target='_blank'><div className={styles.course_card} >
               <div className={styles.course_card_image}>
-                <img src={item.thumbnail} alt="course" />
+                <img src={video.video.thumbnails[0].url} alt="course" />
               </div>
               <div className={styles.course_card_content}>
-                <h3>{item.title}</h3>
-                <span>{item.brand}</span>
+              {video.video.title?<h3>{video.video.title}</h3>:null}
+                {video.video.channelName?<span>{video.video.channelName}</span>:null}
               </div>
               <div className={styles.course_card_border}></div>
               <div className={styles.course_card_footer}>
                 <span>
-                  <BiTime /> {item.price}
+                  <BiTime /> {video.video.lengthText?video.video.lengthText:null}
                 </span>
                 <span>
                   <BiCategoryAlt />
-                  {item.category}
+                  {video.video.viewCountText?video.video.viewCountText:null}
                 </span>
               </div>
             </div>
+            </a>
           );
         })}
       </div>

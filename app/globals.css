@@ -6,12 +6,15 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  
+
 }
 
 :root {
   --body-font: 'Roboto', sans-serif;
   --heading-font: 'Lilita One', cursive;
   --bg-color: #F8F4EA;
+  overflow-x: hidden;
 }
 
 body {

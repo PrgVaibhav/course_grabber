@@ -1,15 +1,13 @@
 .course_container {
     padding: 8px 10px;
+    margin-top: 3rem;
 }
 
 .course_cards {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-
-    place-items: center;
-    gap: .8rem;
-    margin: auto;
-    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
 }
 
 .course_card {
@@ -21,6 +19,9 @@
     height: auto;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
     transition: all .3s ease-in-out;
+    border-radius: 10px;
+    height: 100%;
+    
 }
 
 .course_card:hover {
@@ -29,14 +30,14 @@
 }
 
 .course_card .course_card_image img {
-    width: 300px;
-    height: 300px;
-    max-width: 100%;
-
-    max-height: 100%;
-
+    max-width: 300px;
+    width: 100%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     object-fit: cover;
+}
+.atag{
+    text-decoration: none;
+    color: #004;
 }
 
 .course_card .course_card_content {
@@ -46,6 +47,7 @@
     justify-content: center;
     gap: .6rem;
 }
+
 
 .course_card .course_card_content h3 {
     font-size: 1.5rem;
