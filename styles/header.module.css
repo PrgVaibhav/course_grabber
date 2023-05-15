@@ -8,9 +8,9 @@
     padding: 8px 10px;
 }
 
-.header_wrapper{
-    display:flex;
-    gap:2rem;
+.header_wrapper {
+    display: flex;
+    gap: 2rem;
     align-items: center;
 }
 
@@ -21,9 +21,11 @@
     letter-spacing: 0.2rem;
 }
 
-.headerImage{
+.headerImage {
     max-width: 40rem;
     width: 100%;
+    height: auto;
+    object-fit: cover;
 }
 
 @keyframes color_change {
@@ -101,7 +103,7 @@
 }
 
 @media screen and (max-width: 840px) {
-    .header_wrapper{
+    .header_wrapper {
         flex-direction: column-reverse;
     }
 }

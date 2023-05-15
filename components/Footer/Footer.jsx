@@ -1,4 +1,4 @@
-import styles from './page.module.css';
+import styles from "./page.module.css";
 
 export default function Footer() {
   return (
@@ -15,10 +15,30 @@ export default function Footer() {
           <a className={styles.details}>Privacy Policy</a>
         </div>
         <div className={styles.socialHandles}>
-          <div><h2>Contributers</h2></div>
-          <a href="https://github.com/Varghab">Varghav <i class="fa-brands fa-github"></i></a>
-          <a href="https://github.com/PrgVaibhav">Vaibhav <i class="fa-brands fa-github"></i></a>
-          <a href="https://github.com/scragonrex">Abhishek <i class="fa-brands fa-github"></i></a>
+          <div>
+            <h2>Contributers</h2>
+          </div>
+          <a
+            href="https://github.com/Varghab"
+            target="_blank"
+            aria-label="Github account of creators"
+          >
+            Varghav <i class="fa-brands fa-github"></i>
+          </a>
+          <a
+            href="https://github.com/PrgVaibhav"
+            target="_blank"
+            aria-label="Github account of creators"
+          >
+            Vaibhav <i class="fa-brands fa-github"></i>
+          </a>
+          <a
+            href="https://github.com/scragonrex"
+            target="_blank"
+            aria-label="Github account of creators"
+          >
+            Abhishek <i class="fa-brands fa-github"></i>
+          </a>
         </div>
       </div>
     </div>
