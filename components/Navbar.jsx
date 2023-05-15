@@ -2,7 +2,6 @@
 import Link from "next/link";
 import styles from "../styles/navbar.module.css";
 export default function Navbar() {
-
   const handleClose = () => {
     const element = document.getElementById('sidebar');
     // const opa = document.getElementById('opacity');
@@ -32,8 +31,9 @@ export default function Navbar() {
         </ul>
       </div>
     <div className={styles.navbar}>
-
-      <div ><Link style={{ textDecoration: 'none' }} className={styles.logo} href='/'>Course Grabber</Link></div>
+      <div className={styles.headingLogo}>
+        <Link style={{ textDecoration: 'none' }} className={styles.logo} href='/'>Course Grabber</Link>
+      </div>
       <div className={styles.links}>
         <Link className={styles.link} href="/">
           Home

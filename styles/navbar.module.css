@@ -9,7 +9,10 @@
     padding: 8px 10px;
 
 }
-
+.headingLogo{
+  display: flex;
+  align-items: center;
+}
 .logo {
     margin: 0 1rem;
     font-size: 1.5rem;
@@ -17,6 +20,10 @@
     color: white;
 }
 
+.logoImg{
+  width: 2.5rem;
+  /* height: 1rem; */
+}
 .links {
     margin: 0 1rem;
     display: flex;
@@ -26,22 +33,17 @@
 .link {
     text-decoration: none;
     padding: 0.5rem;
-    background-color: #FF9800;
     color: white;
     border-radius: 0.5rem;
     transition: 0.3s;
     font-weight: bold;
 }
 
-.activeLink {
-    background-color: #ffe3db;
-    color: #e63e09;
 
-}
 
 .link:hover {
-    background-color: #ffe3db;
-    color: #e63e09;
+    background-color: #FF9800;
+    
 }
 
 .menuIcon{
@@ -58,14 +60,7 @@
     transition: 0.5s ease-in-out;
   }
   .sidebar{
-    /* position: fixed;
-    z-index: 1;
-    background-color: white;
-    height: 100vh;
-    width: 50vw;
-    overflow: hidden;
-    transition: 0.5s;
-    /* box-shadow: 0 0 8px 0px rgba(171, 166, 166, 0.703); */
+    
     position: fixed;
     right: 0;
     z-index: 2;
